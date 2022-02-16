@@ -41,6 +41,11 @@ spec:
           value: "false"
         - name: CASC_JENKINS_CONFIG
           value: /var/lib/jenkins/proxy.yaml
+        - name: TESTCREDENTIAL
+            valueFrom:
+              secretKeyRef:
+                key: username
+                name: test-secret
         image: ""
         imagePullPolicy: IfNotPresent
         livenessProbe:
